@@ -21,6 +21,8 @@
   align-items: center;
   text-transform: uppercase;
   border-radius: 2px;
+  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto Mono', monospace; */
 }
 
 .correct {
