@@ -1,0 +1,28 @@
+{
+  "name": "wordle-clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "react-scripts test --env=jsdom"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markcharlessmith/wordle-clone.git"
+  },
+  "author": "Mark Charles Smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markcharlessmith/wordle-clone/issues"
+  },
+  "homepage": "https://github.com/markcharlessmith/wordle-clone#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.18.3",
+    "typescript": "^4.7.4"
+  }
+}
