@@ -42,11 +42,8 @@
 .footer {
   text-align: center;
   justify-content: center;
-  font: 24px black;
+  font-size: 20px;
+  color: rgb(115, 115, 115);
   padding: 20px;
-}
-
-.img {
-  height: 150px;
-  width: 150px;
+  font-family: 'Roboto', sans-serif;
 }
