@@ -29,6 +29,8 @@ export default function App() {
         const isCorrect = solution === currentGuess;
         if (isCorrect) {
           setIsGameOver(true);
+          window.alert(`Congratulations!  The word was '${solution}'`);
+          setGuesses(Array(6).fill(null));
         }
       }
 
