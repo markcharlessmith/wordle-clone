@@ -29,7 +29,7 @@ export default function App() {
         const isCorrect = solution === currentGuess;
         if (isCorrect) {
           setIsGameOver(true);
-          if (window.confirm(`The word was '${solution}.'  Play again?`)) {
+          if (window.confirm(`The word was '${solution.toUpperCase()}.'  Play again?`)) {
             window.location.reload();
             setGuesses(Array(6).fill(null));
           }
