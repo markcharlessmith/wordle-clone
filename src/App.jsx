@@ -9,6 +9,8 @@ export default function App() {
   const [guesses, setGuesses] = useState(Array(6).fill(null));
   const [currentGuess, setCurrentGuess] = useState("");
   const [isGameOver, setIsGameOver] = useState(false);
+  // adding a score state
+  // const [score, setScore] = useState(0);
 
   useEffect(() => {
     const handleType = (event) => {
@@ -32,6 +34,8 @@ export default function App() {
           if (window.confirm(`The word was '${solution.toUpperCase()}.'  Play again?`)) {
             window.location.reload();
             setGuesses(Array(6).fill(null));
+            // setScore(score + 1);
+            // console.log(score);
           }
         }
       }
@@ -89,7 +93,7 @@ function Line({ guess, isFinal, solution }) {
     let className = "tile";
 
     if (isFinal) {
-      // console.log(solution);
+      console.log(solution);
       if (char === solution[i]) {
         className += " correct";
       } else if (solution.includes(char)) {
