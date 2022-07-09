@@ -1,7 +1,6 @@
 import "./styles.css";
 import { useEffect, useState } from "react";
 import wordleWords from "./wordleWords.js";
-import Scoreboard from "./Scoreboard";
 
 const WORD_LENGTH = 5;
 
@@ -74,6 +73,7 @@ export default function App() {
   }, []);
   return (
       <div className="board">
+        <div className="scoreboard">Score is: {score}</div>
       {guesses.map((guess, i) => {
         const isCurrentGuess = i === guesses.findIndex((val) => val == null);
         return (
