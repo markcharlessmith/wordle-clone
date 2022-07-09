@@ -1,6 +1,7 @@
 import "./styles.css";
 import { useEffect, useState } from "react";
 import wordleWords from "./wordleWords.js";
+import Scoreboard from "./Scoreboard";
 
 const WORD_LENGTH = 5;
 
@@ -10,12 +11,14 @@ export default function App() {
   const [currentGuess, setCurrentGuess] = useState("");
   const [isGameOver, setIsGameOver] = useState(false);
   // adding a score state
-  // const [score, setScore] = useState(0);
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     const handleType = (event) => {
       if (isGameOver) {
-        return;
+        // window.location.reload();
+        setGuesses(Array(6).fill(null));
+        // return;
       }
 
       if (event.key === "Enter") {
@@ -30,14 +33,13 @@ export default function App() {
 
         const isCorrect = solution === currentGuess;
         if (isCorrect) {
-          // setScore(score + 1);
-          setIsGameOver(true);
-          if (window.confirm(`The word was '${solution.toUpperCase()}.'  Play again?`)) {
-            window.location.reload();
-            setGuesses(Array(6).fill(null));
-            // setScore(score + 1);
-            // console.log(score);
+          setScore(score + 1);
+            if (window.confirm(`The word was '${solution.toUpperCase()}.'  Play again?`)) {
+            // window.location.reload();
+            // setGuesses(Array(6).fill(null));
+            setIsGameOver(true);
           }
+          // setIsGameOver(true);
         }
       }
 
@@ -58,7 +60,7 @@ export default function App() {
 
     window.addEventListener("keydown", handleType);
     return () => window.removeEventListener("keydown", handleType);
-  }, [currentGuess, isGameOver, solution, guesses]);
+  }, [currentGuess, isGameOver, solution, guesses, score]);
 
   useEffect(() => {
     const getWord = async () => {
@@ -71,7 +73,7 @@ export default function App() {
     getWord();
   }, []);
   return (
-    <div className="board">
+      <div className="board">
       {guesses.map((guess, i) => {
         const isCurrentGuess = i === guesses.findIndex((val) => val == null);
         return (
@@ -112,3 +114,4 @@ function Line({ guess, isFinal, solution }) {
   }
   return <div className="line">{tiles}</div>;
 }
+
