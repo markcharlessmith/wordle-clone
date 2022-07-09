@@ -34,7 +34,7 @@ export default function App() {
         const isCorrect = solution === currentGuess;
         if (isCorrect) {
           setScore(score + 1);
-            if (window.confirm(`The word was '${solution.toUpperCase()}.'  Play again?`)) {
+            if (window.confirm(`The word was '${solution.toUpperCase()}.'  Click 'OK' and then press enter to play again.`)) {
             // window.location.reload();
             // setGuesses(Array(6).fill(null));
             setIsGameOver(true);
