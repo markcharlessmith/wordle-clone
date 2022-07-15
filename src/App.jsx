@@ -17,7 +17,15 @@ export default function App() {
       if (isGameOver) {
         // window.location.reload();
         setGuesses(Array(6).fill(null));
-        // return;
+        setSolution("");
+        const getWord = async () => {
+          const randomWord = await wordleWords[
+            Math.floor(Math.random() * wordleWords.length)
+          ];
+          setSolution(randomWord.toLowerCase())
+          // setSolution(randomWord);
+        }
+        getWord();
       }
 
       if (event.key === "Enter") {
