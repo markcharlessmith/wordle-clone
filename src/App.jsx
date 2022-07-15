@@ -15,7 +15,6 @@ export default function App() {
   useEffect(() => {
     const handleType = (event) => {
       if (isGameOver) {
-        // window.location.reload();
         setGuesses(Array(6).fill(null));
         setSolution("");
         const getWord = async () => {
@@ -23,9 +22,10 @@ export default function App() {
             Math.floor(Math.random() * wordleWords.length)
           ];
           setSolution(randomWord.toLowerCase())
-          // setSolution(randomWord);
-        }
+          }
         getWord();
+        // needed code which is now on line 28
+        setIsGameOver(false);
       }
 
       if (event.key === "Enter") {
