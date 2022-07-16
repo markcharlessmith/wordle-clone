@@ -46,9 +46,19 @@ export default function App() {
             // setGuesses(Array(6).fill(null));
             setIsGameOver(true);
           }
-          // setIsGameOver(true);
+          
+        }
+        // begun working on functionality to support user not getting word correctly
+        // const isWrong = (!solution) === currentGuess;
+        console.log(guesses.length)
+        console.log(guesses)
+        console.log(guesses[guesses.length - 2])
+        if (guesses[guesses.length - 2] !== null) {
+          if (window.confirm(`Sorry!  The word was '${solution.toUpperCase()}.'  Click 'OK' and then press enter to start over.`)) {
+            setIsGameOver(true);
         }
       }
+    }
 
       if (event.key === "Backspace") {
         setCurrentGuess(currentGuess.slice(0, -1));
