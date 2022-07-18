@@ -41,7 +41,7 @@ export default function App() {
         const isCorrect = solution === currentGuess;
         if (isCorrect) {
           setScore(score + 1);
-            if (window.confirm(`The word was '${solution.toUpperCase()}.'  Click 'OK' and then press enter to play again.`)) {
+            if (window.confirm(`Congrats!  Your word was '${solution.toUpperCase()}.'  Click 'OK' and then press enter to play again.`)) {
             // window.location.reload();
             // setGuesses(Array(6).fill(null));
             setIsGameOver(true);
@@ -50,9 +50,9 @@ export default function App() {
         }
         // begun working on functionality to support user not getting word correctly
         // const isWrong = (!solution) === currentGuess;
-        console.log(guesses.length)
-        console.log(guesses)
-        console.log(guesses[guesses.length - 2])
+        // console.log(guesses.length)
+        // console.log(guesses)
+        // console.log(guesses[guesses.length - 2])
         if (guesses[guesses.length - 2] !== null) {
           if (window.confirm(`Sorry!  The word was '${solution.toUpperCase()}.'  Click 'OK' and then press enter to start over.`)) {
             setIsGameOver(true);
