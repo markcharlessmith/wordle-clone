@@ -1,16 +1,15 @@
-import { useEffect } from "react"
-import { useState } from "react"
+import { useEffect, useState } from "react";
 
 export default function Keyboard () {
 const [letters, setLetters] = useState(null)
 
 useEffect(() => {
   const getLetters = async () => {
-    const chosenLetter = await wordleWords[
-      Math.floor(Math.random() * wordleWords.length)
+    const chosenLetter = await letters[
+      letters[i]
     ];
-    setSolution(randomWord.toLowerCase())
-    }
+    setLetters(letters[i].toLowerCase())
+    };
   getLetters();
 }, [])
 
